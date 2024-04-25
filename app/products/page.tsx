@@ -1,25 +1,22 @@
-import { Typography, colors } from '@mui/material';
+'use client'
+import { Grid, Typography, colors } from '@mui/material';
 import Page from '../../components/page/page';
+import Product, { ProductProps } from '@/components/product/product';
+
 
 const Products = () => {
   return (
-    <Typography
-      color="primary"
-      fontSize='large'
-      // fontFamily="'georgia', times"
-      variant="h5"
-      noWrap
-      component="h5"
-      sx={{
-        mr: 2,
-        display: { md: 'flex' },
-        fontWeight: 500,
-        letterSpacing: '.1rem',
-        textDecoration: 'none',
-      }}
-    >
-      Products
-    </Typography>
+    <>
+      <Grid container>
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+        <Product />
+      </Grid>
+    </>
   )
 };
 
