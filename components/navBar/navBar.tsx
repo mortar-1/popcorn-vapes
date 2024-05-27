@@ -5,15 +5,16 @@ import Container from '@mui/material/Container';
 
 import AccountMenu from './accountMenu';
 import UnFlexed from './unFlexed';
-import CompanyAndLogo from './companyAndLogo';
 import FlexedItems from './felxedItems';
+import Logo from './logo';
+
 
 export default function HeaderMenu() {
   return (
     <AppBar position="static">
       <Container>
         <Toolbar disableGutters>
-          <CompanyAndLogo />
+          <Logo />
           <UnFlexed />
           <FlexedItems />
           <AccountMenu />

@@ -5,18 +5,30 @@ export interface LogoProps {
     tooltip?: string;
     href?: string;
     src?: string;
-    sx?: SxProps
+    customSx?: SxProps;
 };
 
-export const Logo = ({ tooltip, href, src, sx }: LogoProps) => {
-    const defaultSx = {
-        width: 56, height: 56, background: colors.blueGrey[900]
+export const Logo = ({ tooltip, href, src, customSx }: LogoProps) => {
+
+    const shortLogoSx = {
+        width: 'auto',
+        display: {
+            xs: 'block', md: 'none'
+        },
+    }
+
+    const fullLogoSx = {
+        width: 'auto',
+        display: {
+            xs: 'none', md: 'flex'
+        },
     }
 
     return (
         <Tooltip title={tooltip || 'Home'}>
             <Link href={href || '/'}>
-                <Avatar alt="Popcorn Vapes" src={src} sx={sx || defaultSx} />
+                <Avatar alt="short logo" src='logo1_short_cropped.png' sx={customSx || shortLogoSx} variant='square' />
+                <Avatar alt="full logo" src='logo1.png' sx={customSx || fullLogoSx} variant='square' />
             </Link>
         </Tooltip>
     )

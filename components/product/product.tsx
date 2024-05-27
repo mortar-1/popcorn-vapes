@@ -51,7 +51,7 @@ export default function Product({ imgSrc }: ProductProps) {
                     </Avatar>
                 }
                 action={
-                    <IconButton aria-label="settings">
+                    <IconButton aria-label="settings">      
                         <MoreVertIcon />
                     </IconButton>
                 }
