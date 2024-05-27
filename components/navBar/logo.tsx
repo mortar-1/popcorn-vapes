@@ -13,22 +13,22 @@ export const Logo = ({ tooltip, href, src, customSx }: LogoProps) => {
     const shortLogoSx = {
         width: 'auto',
         display: {
-            xs: 'block', md: 'none'
+            xs: 'flex', sm: 'none'
         },
     }
 
     const fullLogoSx = {
         width: 'auto',
         display: {
-            xs: 'none', md: 'flex'
+            xs: 'none', sm: 'flex'
         },
     }
 
     return (
         <Tooltip title={tooltip || 'Home'}>
             <Link href={href || '/'}>
-                <Avatar alt="short logo" src='logo1_short_cropped.png' sx={customSx || shortLogoSx} variant='square' />
-                <Avatar alt="full logo" src='logo1.png' sx={customSx || fullLogoSx} variant='square' />
+                <Avatar alt="short logo" src='/logo1_short_cropped.png' sx={customSx || shortLogoSx} variant='square' />
+                <Avatar alt="full logo" src='/logo1.png' sx={customSx || fullLogoSx} variant='square' />
             </Link>
         </Tooltip>
     )
