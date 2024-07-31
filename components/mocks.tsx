@@ -1,28 +1,26 @@
-import { AccountProps } from '@/globals/globalTypes';
-import { NavItem } from './navBar/navItem';
+import { Account, NavItem } from '@/globals/types';
 
-const account: AccountProps = {
-    username: 'CornPopper',
-    password: '123',
-    profilePictureSrc: 'account1.jpg',
-    id: 'mock_account_01',
-    info: 'A true popcorn vaper'
+export const account: Account = {
+  username: 'CornPopper',
+  email: 'corn.popper@email.com',
+  password: '123',
+  profilePictureSrc: 'account1.jpg',
+  id: 'mock_account_01',
+  info: 'A true popcorn vaper'
 };
 
-const navItems: NavItem[] = [
-    {
-        title: 'Products',
-        href: '/products',
-    },
-    {
-        title: 'Check Out',
-        href: '/checkout'
-    }
+export const navItems: NavItem[] = [
+  {
+    title: 'Products',
+    href: '/products'
+  },
+  {
+    title: 'Check Out',
+    href: '/checkout'
+  }
 ];
 
-const mocks = {
-    account,
-    navItems
+export default {
+  account,
+  navItems
 };
-
-export default mocks;

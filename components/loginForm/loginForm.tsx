@@ -1,27 +1,46 @@
-'use client'
-import { useRef } from "react";
-import ValidatedTextField from "../validatedTextField";
-import VAL from "../validators";
-import { useNameContext } from "@/globals/contexts/Name";
+'use client';
+
+import { ChangeEvent, useRef, useState } from 'react';
+import { Button, TextField } from '@mui/material';
+
+import ValidatedTextField from '../validatedTextField';
+import { account as mockAccount } from '@/components/mocks';
+import VAL from '../validators';
+import { useAccountContext } from '@/globals/contexts/Account';
 
 const LoginForm = () => {
-  const { name, setName } = useNameContext();
+  const [account, setAccount] = useAccountContext();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const errors = useRef({ email: false });
 
-  const errors = useRef({ name: false, email: false });
+  const handleLogin = () => {
+    console.log('Login clicked');
+    setAccount(mockAccount);
+  };
 
-  const handleNameValidityChange = (isValid: boolean) =>
-    (errors.current.name = isValid);
+  const handlePasswordChange = (event: ChangeEvent<HTMLInputElement>) =>
+    setPassword(event.target.value);
+
+  const handleEmailValidityChange = (isValid: boolean) =>
+    (errors.current.email = isValid);
 
   return (
     <>
-      <h1>Login Form</h1>
+      <h1>Login</h1>
       <ValidatedTextField
-        label="Name"
-        validator={VAL.nameValidator}
-        onValidityChange={handleNameValidityChange}
-        value={name}
-        setter={setName}
+        label="Email"
+        validator={VAL.emailValidator}
+        onValidityChange={handleEmailValidityChange}
+        value={email}
+        setter={setEmail}
       />
+      <TextField
+        label="Password"
+        value={password}
+        onChange={handlePasswordChange}
+      />
+      <Button onClick={handleLogin}>Login</Button>
     </>
   );
 };

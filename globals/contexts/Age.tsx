@@ -1,14 +1,22 @@
-import { createContext, useContext } from "react";
-import { AgeProps } from '../globalTypes';
+import { createContext, Dispatch, useContext } from 'react';
+import { Age } from '../types';
 
-export const AgeContext = createContext<AgeProps>({ age: 0 });
+export interface AgeContextProps {
+  age: Age;
+  setAge: Dispatch<Age>;
+}
+
+export const AgeContext = createContext<AgeContextProps>({
+  age: 0,
+  setAge: () => 0
+});
 
 export const useAgeContext = () => {
-    const context = useContext(AgeContext);
-    if (!context) {
-        throw new Error(
-            "useAgeContext has to be used within <AgeContext.Provider>"
-        );
-    }
-    return context;
+  const context = useContext(AgeContext);
+  if (!context) {
+    throw new Error(
+      'useAgeContext has to be used within <AgeContext.Provider>'
+    );
+  }
+  return context;
 };

@@ -1,7 +1,7 @@
-import { TextField } from "@mui/material";
-import { ChangeEvent, Dispatch, useState } from "react";
+import { TextField } from '@mui/material';
+import { ChangeEvent, Dispatch, useState } from 'react';
 
-interface ValidateProps {
+interface ValidatedTextFieldPorps {
   label: string;
   validator: (value: string) => string | boolean;
   onValidityChange: (isValid: boolean) => void;
@@ -14,8 +14,8 @@ const ValidatedTextField = ({
   validator,
   onValidityChange,
   value,
-  setter,
-}: ValidateProps) => {
+  setter
+}: ValidatedTextFieldPorps) => {
   const [error, setError] = useState<string | boolean>(false);
 
   const handleChange = (
