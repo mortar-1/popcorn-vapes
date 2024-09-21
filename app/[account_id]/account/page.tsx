@@ -1,6 +1,6 @@
-'use client'
+'use client';
 import { Typography } from '@mui/material';
-
+import { Account } from '@/globals/types';
 import Page from '@/components/page/page';
 import { useAccountContext } from '@/globals/contexts/Account';
 
@@ -9,15 +9,19 @@ interface UserInfoProps {
   infoValue: any;
 }
 
-const UserInfo = ({ infoKey, infoValue }: UserInfoProps) => <Typography variant='body1'>{infoKey}: {infoValue}</Typography>
+const UserInfo = ({ infoKey, infoValue }: UserInfoProps) => (
+  <Typography variant="body1">
+    {infoKey}: {infoValue}
+  </Typography>
+);
 
-const Account = () => {
-  const { account } = useAccountContext();
+const AccountPageElement = () => {
+  const [Account] = useAccountContext();
   return (
     <>
       <Typography
         color="primary"
-        fontSize='large'
+        fontSize="large"
         variant="h5"
         noWrap
         component="h5"
@@ -26,24 +30,25 @@ const Account = () => {
           display: { md: 'flex' },
           fontWeight: 500,
           letterSpacing: '.1rem',
-          textDecoration: 'none',
+          textDecoration: 'none'
         }}
       >
         Account:
       </Typography>
-      {account &&
-        Object.entries(account).map(
-          ([key, value]: [key: string, value: any], i) => <UserInfo key={key + i} infoKey={key} infoValue={value} />
-        )
-      }
+      {Account &&
+        Object.entries(Account).map(
+          ([key, value]: [key: string, value: any], i) => (
+            <UserInfo key={key + i} infoKey={key} infoValue={value} />
+          )
+        )}
     </>
-  )
+  );
 };
 
 export default function AccountPage() {
   return (
     <Page>
-      <Account />
+      <AccountPageElement />
     </Page>
   );
 }
