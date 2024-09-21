@@ -14,6 +14,7 @@ const getCurrentYear = () => {
 
 const letter = "A-zÄäÖöÅåÜü";
 const fullName = `^[${letter}]+[ ][${letter}]+[ ]?[\\-${letter}]+?[ ]?`;
+const email = "^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+$";
 
 const utilities = {
   setErrorIfEmpty,
@@ -21,6 +22,7 @@ const utilities = {
   patterns: {
     letter,
     fullName,
+    email,
   },
 };
 

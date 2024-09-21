@@ -1,15 +1,19 @@
-import { Typography } from "@mui/material";
-import Page from "../../components/page/page";
-import LoginForm from "@/components/loginForm/loginForm";
+'use client';
+
+import Page from '../../components/page/page';
+import { useAccountContext } from '@/globals/contexts/Account';
+import LoginForm from '@/components/loginForm/loginForm';
+import LoggedIn from '@/components/loggedIn/loggedIn';
 
 const LoginPage = () => {
   return <LoginForm />;
 };
 
+const LoggedInPage = () => {
+  return <LoggedIn />;
+};
+
 export default function CheckOutPage() {
-  return (
-    <Page>
-      <LoginPage />
-    </Page>
-  );
+  const [account, setAccount] = useAccountContext();
+  return <Page>{account ? <LoggedInPage /> : <LoginPage />}</Page>;
 }

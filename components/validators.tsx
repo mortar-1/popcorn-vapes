@@ -1,20 +1,20 @@
-import UTILS from "./utilities";
+import UTILS from './utilities';
 
 const nameValidator = (value: string) => {
   const fullNameRegExp = new RegExp(UTILS.patterns.fullName);
-  if (!fullNameRegExp.test(value)) return "Koko nimi vaaditaan";
+  if (!fullNameRegExp.test(value)) return 'Full name needed';
   return false;
 };
 
 const emailValidator = (value: string) => {
-  if (!/^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+$/.test(value))
-    return "Sähköposti vaaditaan";
+  const emailRegExp = new RegExp(UTILS.patterns.email);
+  if (!emailRegExp.test(value)) return 'Email needed';
   return false;
 };
 
 const validators = {
   nameValidator,
-  emailValidator,
+  emailValidator
 };
 
 export default validators;
