@@ -1,32 +1,14 @@
-import { Typography, colors } from '@mui/material';
-
 import Page from '../../components/page/page';
+import SignUpForm from '@/components/signUp/signUpForm';
 
-const Products = () => {
-  return (
-    <Typography
-      variant="h5"
-      noWrap
-      component="h5"
-      sx={{
-        mr: 2,
-        display: { md: 'flex' },
-        fontFamily: "'georgia', times",
-        fontWeight: 500,
-        letterSpacing: '.1rem',
-        color: colors.amber[700],
-        textDecoration: 'none',
-      }}
-    >
-      Sign up
-    </Typography>
-  )
+const SignUpElement = () => {
+  return <SignUpForm />;
 };
 
-export default function ProductsPage() {
+export default function SignUpPage() {
   return (
     <Page>
-      <Products />
+      <SignUpElement />
     </Page>
   );
 }
