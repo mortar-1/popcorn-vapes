@@ -1,12 +1,12 @@
 import { createContext, Dispatch, useContext } from 'react';
-import { Account } from '../types';
+import { User } from '../types';
 
 // export interface AccountContextProps {
 //   account: Account;
 //   setAccount: Dispatch<Account>;
 // }
 
-export type AccountContextProps = [Account, Dispatch<Account>];
+export type AccountContextProps = [User, Dispatch<User>];
 
 // export const AccountContext = createContext<AccountContextProps>({
 //   account: undefined,

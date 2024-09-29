@@ -1,13 +1,14 @@
-import { Account, NavItem } from '@/globals/types';
+import { NavItem, UserProps } from '@/globals/types';
 
-export const account: Account = {
-  username: 'CornPopper',
-  email: 'corn.popper@email.com',
-  password: '123',
-  profilePictureSrc: 'account1.jpg',
-  id: 'mock_account_01',
-  info: 'A true popcorn vaper'
-};
+export const users: UserProps[] = [
+  {
+    id: '410544b2-4001-4271-9855-fec4b6a6442a',
+    name: 'User',
+    email: 'user@nextmail.com',
+    password: '123456',
+    imgUrl: '/account1.jpg'
+  }
+];
 
 export const navItems: NavItem[] = [
   {
@@ -21,6 +22,6 @@ export const navItems: NavItem[] = [
 ];
 
 export default {
-  account,
+  users,
   navItems
 };

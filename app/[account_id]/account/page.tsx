@@ -1,6 +1,6 @@
 'use client';
 import { Typography } from '@mui/material';
-import { Account } from '@/globals/types';
+import { User } from '@/globals/types';
 import Page from '@/components/page/page';
 import { useAccountContext } from '@/globals/contexts/Account';
 

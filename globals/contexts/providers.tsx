@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { AgeContext } from './Age';
-import { Account, Age, Name } from '../types';
+import { User, Age, Name } from '../types';
 import { AccountContext } from './Account';
 import { ThemeProvider } from '@mui/material';
 import theme from '../themes/theme';
@@ -12,7 +12,7 @@ import { NameContext } from './Name';
 
 const Providers = ({ children }: RootProps) => {
   const [age, setAge] = useState<Age>(0);
-  const [account, setAccount] = useState<Account>(undefined);
+  const [account, setAccount] = useState<User>(undefined);
   const [name, setName] = useState<Name>('');
   return (
     <>

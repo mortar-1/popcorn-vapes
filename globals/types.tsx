@@ -1,15 +1,14 @@
 import { Url } from 'next/dist/shared/lib/router/router';
 
-export interface AccountProps {
-  username: string;
+export interface UserProps {
+  id: string;
+  name: string;
   email: string;
   password: string;
-  profilePictureSrc: string;
-  info: string;
-  id: string;
+  imgUrl: string;
 }
 
-export type Account = AccountProps | undefined;
+export type User = UserProps | undefined;
 
 export type Age = number;
 
