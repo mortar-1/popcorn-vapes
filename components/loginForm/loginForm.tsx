@@ -4,19 +4,19 @@ import { ChangeEvent, useRef, useState } from 'react';
 import { Button, TextField } from '@mui/material';
 
 import ValidatedTextField from '../validatedTextField';
-import { account as mockAccount } from '@/components/mocks';
+import { users as mockUsers } from '@/components/mocks';
 import VAL from '../validators';
-import { useAccountContext } from '@/globals/contexts/Account';
+import { useUserContext } from '@/globals/contexts/User';
 
 const LoginForm = () => {
-  const [account, setAccount] = useAccountContext();
+  const [account, setAccount] = useUserContext();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const errors = useRef({ email: false });
 
   const handleLogin = () => {
     console.log('Login clicked');
-    setAccount(mockAccount);
+    setAccount(mockUsers[0]);
   };
 
   const handlePasswordChange = (event: ChangeEvent<HTMLInputElement>) =>

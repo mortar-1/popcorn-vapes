@@ -1,7 +1,7 @@
 'use client';
 
 import Page from '../../components/page/page';
-import { useAccountContext } from '@/globals/contexts/Account';
+import { useUserContext } from '@/globals/contexts/User';
 import LoginForm from '@/components/loginForm/loginForm';
 import LoggedIn from '@/components/loggedIn/loggedIn';
 
@@ -14,6 +14,6 @@ const LoggedInPage = () => {
 };
 
 export default function CheckOutPage() {
-  const [account, setAccount] = useAccountContext();
-  return <Page>{account ? <LoggedInPage /> : <LoginPage />}</Page>;
+  const [user, setUser] = useUserContext();
+  return <Page>{user ? <LoggedInPage /> : <LoginPage />}</Page>;
 }

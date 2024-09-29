@@ -1,8 +1,7 @@
 'use client';
 import { Typography } from '@mui/material';
-import { User } from '@/globals/types';
 import Page from '@/components/page/page';
-import { useAccountContext } from '@/globals/contexts/Account';
+import { useUserContext } from '@/globals/contexts/User';
 
 interface UserInfoProps {
   infoKey: string;
@@ -16,7 +15,7 @@ const UserInfo = ({ infoKey, infoValue }: UserInfoProps) => (
 );
 
 const AccountPageElement = () => {
-  const [Account] = useAccountContext();
+  const [user] = useUserContext();
   return (
     <>
       <Typography
@@ -35,8 +34,8 @@ const AccountPageElement = () => {
       >
         Account:
       </Typography>
-      {Account &&
-        Object.entries(Account).map(
+      {user &&
+        Object.entries(user).map(
           ([key, value]: [key: string, value: any], i) => (
             <UserInfo key={key + i} infoKey={key} infoValue={value} />
           )

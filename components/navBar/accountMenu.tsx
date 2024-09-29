@@ -3,13 +3,13 @@
 import { Box, IconButton, Menu } from '@mui/material';
 import { MouseEvent, useState } from 'react';
 
-import { useAccountContext } from '@/globals/contexts/Account';
+import { useUserContext } from '@/globals/contexts/User';
 import { NavLink } from '../navItems/navLink/navLink';
 import ProfilePic from './profilePic';
 import { NavItem } from '@/globals/types';
 
 export default function AccountMenu() {
-  const [account, setAccount] = useAccountContext();
+  const [account, setAccount] = useUserContext();
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
   const handleOpenAccountMenu = (event: MouseEvent<HTMLElement>) => {
@@ -27,8 +27,8 @@ export default function AccountMenu() {
 
   const accountSettings: NavItem[] = [
     {
-      title: 'Account',
-      href: `/${account?.id}/account`,
+      title: 'User',
+      href: `/${account?.id}/user`,
       onClick: handleCloseAccountMenu
     },
     {

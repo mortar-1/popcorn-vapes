@@ -1,14 +1,14 @@
-import { useAccountContext } from '@/globals/contexts/Account';
+import { useUserContext } from '@/globals/contexts/User';
 import { Avatar, Typography, colors } from '@mui/material';
 
 const ProfilePic = () => {
-  const [account, setAccount] = useAccountContext();
+  const [user, setUser] = useUserContext();
 
   const Logged = () => {
     return (
       <Avatar
-        alt={account?.username}
-        src={account?.profilePictureSrc}
+        alt={user?.name}
+        src={user?.imgUrl}
         sx={{ width: 56, height: 56, background: colors.blueGrey[900] }}
       />
     );
@@ -35,7 +35,7 @@ const ProfilePic = () => {
     );
   };
 
-  if (account) return <Logged />;
+  if (user) return <Logged />;
   return <NotLogged />;
 };
 

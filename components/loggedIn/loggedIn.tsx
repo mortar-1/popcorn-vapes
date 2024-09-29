@@ -1,19 +1,19 @@
 'use client';
 
 import { Button } from '@mui/material';
-import { useAccountContext } from '@/globals/contexts/Account';
+import { useUserContext } from '@/globals/contexts/User';
 
 const LoggedIn = () => {
-  const [account, setAccount] = useAccountContext();
+  const [user, setUser] = useUserContext();
 
   const handleLogout = () => {
     console.log('Logout clicked');
-    setAccount(undefined);
+    setUser(undefined);
   };
 
   return (
     <>
-      <h1>Logged in: {account?.username}</h1>
+      <h1>Logged in: {user?.name}</h1>
       <Button onClick={handleLogout}>Logout</Button>
     </>
   );
