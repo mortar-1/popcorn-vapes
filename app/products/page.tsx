@@ -1,23 +1,17 @@
-'use client'
-import { Grid, Typography, colors } from '@mui/material';
-import Page from '../../components/page/page';
-import Product, { ProductProps } from '@/components/product/product';
+'use client';
+import { Grid } from '@mui/material';
 
+import Page from '../../components/page/page';
+import Product from '@/components/product/product';
 
 const Products = () => {
   return (
     <>
       <Grid container>
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
+        <Product imgSrc="/vape_device.jpg" />
       </Grid>
     </>
-  )
+  );
 };
 
 export default function ProductsPage() {

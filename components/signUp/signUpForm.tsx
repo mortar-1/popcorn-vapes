@@ -37,7 +37,7 @@ const SignUpForm = () => {
         value={email}
         setter={setEmail}
       />
-      <Button onClick={handleSignUp}>Login</Button>
+      <Button onClick={handleSignUp}>Sign up </Button>
     </>
   );
 };
