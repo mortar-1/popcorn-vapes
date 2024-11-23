@@ -1,3 +1,4 @@
+import { PaletteMode } from '@mui/material';
 import { Url } from 'next/dist/shared/lib/router/router';
 
 export interface UserProps {
@@ -11,6 +12,8 @@ export interface UserProps {
 export type User = UserProps | undefined;
 
 export type Age = number;
+
+export type Theme = PaletteMode;
 
 export interface NavItemProps {
   href?: Url;

@@ -6,27 +6,13 @@ import { colors } from '@mui/material';
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
   subsets: ['latin'],
-  display: 'swap',
+  display: 'swap'
 });
-
-// const theme = createTheme({
-//   typography: {
-//     fontFamily: roboto.style.fontFamily,
-//   },
-//   palette: {
-//     primary: {
-//       main: colors.blueGrey[800],
-//     },
-//     secondary: {
-//       main: colors.deepOrange[800],
-//     },
-//   },
-// });
 
 const theme = createTheme({
   typography: {
-    fontFamily: roboto.style.fontFamily,
-  },
+    fontFamily: roboto.style.fontFamily
+  }
 });
 
 export default theme;
