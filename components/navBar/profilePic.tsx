@@ -30,7 +30,7 @@ const ProfilePic = () => {
           textDecoration: 'none'
         }}
       >
-        {'Login'}
+        {'Account'}
       </Typography>
     );
   };
