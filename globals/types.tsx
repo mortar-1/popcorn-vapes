@@ -1,5 +1,6 @@
 import { PaletteMode } from '@mui/material';
 import { Url } from 'next/dist/shared/lib/router/router';
+import { Dispatch } from 'react';
 
 export interface UserProps {
   id: string;
@@ -25,14 +26,7 @@ export type NavItem = NavItemProps;
 
 export type Name = string;
 
-export interface CartItemProps {
-  id: string;
-  name: string;
-  price: number;
-  quantity: number;
-}
-
-export type CartItem = CartItemProps;
+export type NameContextProps = [Name, Dispatch<Name>];
 
 export interface ProductProps {
   id: string;
@@ -44,3 +38,30 @@ export interface ProductProps {
 }
 
 export type Product = ProductProps;
+
+export type CartContextProps = {
+  state: CartState;
+  dispatch: Dispatch<CartAction>;
+  subtotal: number;
+};
+
+export interface CartItemProps {
+  id: string;
+  name: string;
+  price: number;
+  quantity: number;
+}
+
+export type CartItem = CartItemProps;
+
+export type CartState = {
+  items: CartItem[];
+};
+
+export type CartAction =
+  | { type: "ADD_ITEM"; id: string; name: string; price: number }
+  | { type: "REMOVE_ITEM"; id: string }
+  | { type: "UPDATE_QUANTITY"; id: string; quantity: number }
+  | { type: "CLEAR_CART" };
+
+

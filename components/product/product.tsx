@@ -8,9 +8,7 @@ import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { useCart } from '@/globals/contexts/Cart';
@@ -64,7 +62,8 @@ const Product: React.FC<ProductProps> = ({ id, name, subtext, price, description
         <IconButton
           aria-label="add to cart"
           onClick={() => {
-            dispatch({ type: "ADD_ITEM", payload: { id, name, price } })
+            console.log(`Adding ${name} to cart with price ${price}`);
+            dispatch({ type: "ADD_ITEM", id, name, price })
           }}
         >
           <AddShoppingCartIcon />

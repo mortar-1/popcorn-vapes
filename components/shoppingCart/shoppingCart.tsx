@@ -22,7 +22,8 @@ const ShoppingCart = () => {
                         onClick={() =>
                             dispatch({
                                 type: "UPDATE_QUANTITY",
-                                payload: { id: item.id, quantity: item.quantity - 1 },
+                                id: item.id,
+                                quantity: item.quantity - 1,
                             })
                         }
                     >
@@ -33,7 +34,8 @@ const ShoppingCart = () => {
                         onClick={() =>
                             dispatch({
                                 type: "UPDATE_QUANTITY",
-                                payload: { id: item.id, quantity: item.quantity + 1 },
+                                id: item.id,
+                                quantity: item.quantity + 1,
                             })
                         }
                     >
@@ -42,7 +44,10 @@ const ShoppingCart = () => {
 
                     <button
                         onClick={() =>
-                            dispatch({ type: "REMOVE_ITEM", payload: item.id })
+                            dispatch({
+                                type: "REMOVE_ITEM",
+                                id: item.id
+                            })
                         }
                     >
                         Remove

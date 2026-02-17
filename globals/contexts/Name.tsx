@@ -1,17 +1,5 @@
 import { createContext, Dispatch, useContext } from 'react';
-import { Name } from '../types';
-
-// export interface NameContextProps {
-//   name: Name;
-//   setName: Dispatch<Name>;
-// }
-
-export type NameContextProps = [Name, Dispatch<Name>];
-
-// export const NameContext = createContext<NameContextProps>({
-//   name: '',
-//   setName: () => ''
-// });
+import { NameContextProps } from '../types';
 
 export const NameContext = createContext<NameContextProps>(['', () => '']);
 
