@@ -18,10 +18,8 @@ const LoginForm = () => {
     console.log('Login clicked');
     setAccount(mockUsers[0]);
   };
-
   const handlePasswordChange = (event: ChangeEvent<HTMLInputElement>) =>
     setPassword(event.target.value);
-
   const handleEmailValidityChange = (isValid: boolean) =>
     (errors.current.email = isValid);
 

@@ -24,3 +24,23 @@ export interface NavItemProps {
 export type NavItem = NavItemProps;
 
 export type Name = string;
+
+export interface CartItemProps {
+  id: string;
+  name: string;
+  price: number;
+  quantity: number;
+}
+
+export type CartItem = CartItemProps;
+
+export interface ProductProps {
+  id: string;
+  name: string;
+  subtext?: string;
+  price: number;
+  description?: string;
+  imgSrc?: string;
+}
+
+export type Product = ProductProps;

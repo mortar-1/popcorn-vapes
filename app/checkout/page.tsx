@@ -1,32 +1,29 @@
-import { Typography } from '@mui/material';
-import Page from '../../components/page/page';
+'use client';
+import Page from "@/components/page/page";
+import Product from "@/components/product/product";
+import ShoppingCart from "@/components/shoppingCart/shoppingCart";
+import { CartProvider } from "@/globals/contexts/Cart";
+import React from "react";
 
-const CheckOut = () => {
+
+const ShoppingCartCurrent = () => {
   return (
-    <Typography
-      color="primary"
-      fontSize='large'
-      // fontFamily="'georgia', times"
-      variant="h5"
-      noWrap
-      component="h5"
-      sx={{
-        mr: 2,
-        display: { md: 'flex' },
-        fontWeight: 500,
-        letterSpacing: '.1rem',
-        textDecoration: 'none',
-      }}
-    >
-      Check out
-    </Typography>
-  )
+    <CartProvider>
+      <h1>My Store</h1>
+
+      <Product id="1" name="Laptop" price={1200} />
+      <Product id="2" name="Headphones" price={200} />
+      <Product id="3" name="Keyboard" price={100} />
+
+      <ShoppingCart />
+    </CartProvider>
+  );
 };
 
-export default function CheckOutPage() {
+export default function ProductsPage() {
   return (
     <Page>
-      <CheckOut />
+      <ShoppingCart />
     </Page>
   );
 }
